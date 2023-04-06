@@ -105,7 +105,5 @@ def start_eel(develop: bool):
 if __name__ == '__main__':
     import sys
 
-    print(sys.argv)
-
     # Pass any second argument to enable debugging
     start_eel(develop=len(sys.argv) == 2)

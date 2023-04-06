@@ -28,7 +28,10 @@ const [stoppedContainers, setStoppedContainers] = createSignal<
 >([]);
 
 function getContainers() {
-  window.eel.get_containers()((res) => {
+  window.eel.get_containers<{
+    running: Array<Containers>;
+    stopped: Array<Containers>;
+  }>()((res) => {
     setRunningContainers(res.running);
     setStoppedContainers(res.stopped);
   });
