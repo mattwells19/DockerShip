@@ -12,5 +12,15 @@ declare interface Window {
     get_containers: <Response>() => EelCallback<Response>;
     stop_container: (containerId: string) => EelCallback<void>;
     start_container: (containerId: string) => EelCallback<void>;
+    get_images: <Response>() => EelCallback<Response>;
+    remove_image: (imageId: string) => EelCallback<void>;
+    start_container_with_image: (
+      imageId: string,
+      options: {
+        containerName?: string;
+        containerPort?: string;
+        localPort?: string;
+      }
+    ) => EelCallback<void>;
   };
 }
